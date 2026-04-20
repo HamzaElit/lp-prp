@@ -1,177 +1,184 @@
 .lp-footer {
-  padding: 0 0 8rem;
-  text-align: center;
-  color: var(--Black);
+  background-color: var(--Blue-600);
+  padding: 1.6rem 0 4rem;
+
+  @include md-up {
+    padding: 2.4rem 0 4rem;
+  }
 
   @include lg-up {
-    padding: 0 0 10rem;
+    padding: 3.2rem 0 4.8rem;
   }
 
-  &__title {
-    font-family: var(--font-titles);
-    font-weight: 900;
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 3rem;
-    text-transform: none; // Default text
-    text-align: left; // Left on mobile
-
-    @include lg-up {
-      font-size: 3rem; // 3rem as requested
-      margin-bottom: 4rem;
-      text-align: center; // Center on desktop
-    }
-  }
-
-  &__card {
-    max-width: 512px;
-    margin: 0 auto 6rem;
-    position: relative;
-
-    &-image {
-      border-radius: 20px;
-      overflow: hidden;
-      display: block; // center logic
-      margin: 0 auto;
-
-      img {
-        width: 100%;
-        display: block;
-        height: auto;
-      }
-    }
-
-    &-content {
-      background-color: var(--White);
-      border-radius: 10px;
-      padding: 3rem 2.4rem;
-      margin: -6rem 2rem 0;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0px 16px 19px rgba(0, 0, 0, 0.16);
-      @include lg-up {
-        width: 90%;
-        margin: -8rem auto 0;
-        padding: 4rem 4rem;
-      }
-
-      p:not(.lp-cta-subtitle) {
-        font-family: var(--font-text);
-        font-size: 1.9rem;
-        font-weight: 400;
-        line-height: 1.5;
-        margin-bottom: 3rem;
-        color: var(--Black);
-
-        @include lg-up {
-          font-size: 2.2rem;
-        }
-      }
-
-      .lp-cta-wrapper {
-        margin-top: 1rem;
-        .lp-btn {
-          &__arrow {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25.243' viewBox='0 0 24 25.243'%3E%3Cpath d='M7.5,18h21M18,7.5,28.5,18,18,28.5' transform='translate(-6 -5.379)' fill='none' stroke='%23014799' stroke-linecap='round' stroke-linejoin='round' stroke-width='3'/%3E%3C/svg%3E%0A");
-          }
-
-          @include hover {
-            .lp-btn__arrow {
-              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25.243' viewBox='0 0 24 25.243'%3E%3Cpath d='M7.5,18h21M18,7.5,28.5,18,18,28.5' transform='translate(-6 -5.379)' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3'/%3E%3C/svg%3E%0A");
-            }
-          }
-        }
-        .lp-cta-subtitle {
-          color: var(--Black);
-          font-size: 1.5rem;
-          font-weight: 500;
-          font-family: var(--font-text);
-
-          @include lg-up {
-            font-size: 1.6rem;
-          }
-        }
-      }
-    }
-  }
-
-  &__bottom {
+  &__inner {
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
-    text-align: left; // On mobile it's left-aligned
-    max-width: 650px;
-    margin: 0 auto;
-    font-family: var(--font-text);
+    gap: 2rem;
 
     @include lg-up {
-      text-align: center; // On desktop it's centered
-      gap: 4.5rem;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
     }
   }
 
-  &__help {
-    p {
-      font-size: 1.9rem;
-      font-weight: 700;
-      line-height: 1.4;
-      margin: 0;
-      color: var(--Black);
+  &__logo {
+    img {
+      height: 6rem;
+      width: auto;
+      display: block;
 
       @include lg-up {
-        font-size: 2.2rem;
+        height: 7rem;
       }
     }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include md-up {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    @include lg-up {
+      display: contents;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include md-up {
+      gap: 2.4rem;
+    }
+
+    @include lg-up {
+      display: contents;
+    }
+  }
+
+  &__question {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    @include md-up {
+      gap: 0.8rem;
+    }
+
+    @include lg-up {
+      gap: 1.6rem;
+    }
+  }
+
+  &__question-title {
+    font-family: var(--font-text);
+    font-weight: 700;
+    font-size: var(--h5-font-size);
+    line-height: 1.3;
+    color: var(--Blue-200);
+    margin: 0;
+
+    @include lg-up {
+      font-size: var(--h4-font-size);
+    }
+  }
+
+  &__question-desc {
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: var(--body-font-s);
+    line-height: 1.4;
+    color: var(--White);
+    margin: 0;
   }
 
   &__contact {
-    strong {
-      display: block;
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: var(--Black);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
 
-      @include lg-up {
-        font-size: 2.2rem;
-      }
+    @include md-up {
+      gap: 0.8rem;
     }
 
-    p {
-      margin: 0;
-      font-size: 1.9rem;
+    @include lg-up {
+      gap: 1.6rem;
+    }
+  }
+
+  &__contact-heading {
+    font-family: var(--font-text);
+    font-weight: 700;
+    font-size: var(--h5-font-size);
+    line-height: 1.3;
+    color: var(--Blue-200);
+    margin: 0;
+
+    @include lg-up {
+      font-size: var(--h4-font-size);
+    }
+  }
+
+  &__contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    span {
+      font-family: var(--font-text);
       font-weight: 400;
-      color: var(--Black);
+      font-size: var(--body-font-s);
+      line-height: 1.4;
+      color: var(--White);
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      flex-shrink: 0;
 
       @include lg-up {
-        font-size: 2.2rem;
+        width: 2.4rem;
+        height: 2.4rem;
       }
     }
   }
 
   &__links {
     display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    flex-direction: row;
+    gap: 4rem;
 
-    @include lg-up {
-      gap: 1.5rem;
+    @include md-up {
+      flex-direction: column;
+      gap: 1.6rem;
     }
+  }
 
-    a {
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: var(--Black);
-      text-decoration: none;
-      transition: color 0.3s ease;
+  &__link {
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: var(--body-font-s);
+    line-height: 1.4;
+    color: var(--White);
+    text-decoration: none;
 
-      @include lg-up {
-        font-size: 2.2rem;
-      }
-
-      @include hover {
-        color: var(--Primary);
-      }
+    @include hover {
+      opacity: 0.8;
     }
   }
 }
