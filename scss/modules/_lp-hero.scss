@@ -58,9 +58,7 @@
     @include md-up {
       padding: 2.4rem;
       border-radius: 3rem;
-      flex-direction: row;
-      align-items: center;
-      gap: 2.4rem;
+      gap: 1.6rem;
     }
 
     @include lg-up {
