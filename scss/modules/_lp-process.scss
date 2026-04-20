@@ -1,0 +1,213 @@
+.lp-process {
+  padding-block: 4rem;
+  background: linear-gradient(180deg, #03275f 0%, #2f7fdb 46.64%, #062657 100%);
+  overflow: hidden;
+
+  @include md-up {
+    padding-block: 6rem;
+  }
+
+  @include lg-up {
+    padding-block: 8rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+    text-align: center;
+  }
+
+  &__badge {
+    background-color: var(--Blue-200);
+    color: var(--Blue-600);
+    font-family: var(--font-text);
+    font-size: var(--body-font-s); // 16px to 18px on desktop
+    font-weight: 700;
+    padding: 0.8rem 1.6rem;
+    border-radius: 5rem;
+    line-height: 1.4;
+
+    @include lg-up {
+      font-size: var(--body-font-m); // 18px
+    }
+  }
+
+  &__title {
+    font-family: var(--font-titles);
+    font-size: var(--h2-font-size); // 32px
+    font-weight: 700;
+    color: var(--White);
+    line-height: 1.2;
+    margin: 0;
+
+    @include lg-up {
+      font-size: var(--h1-font-size); // 48px
+    }
+  }
+
+  &__desc {
+    font-family: var(--font-text);
+    font-size: var(--body-font-s); // 16px
+    color: var(--Light-Grey);
+    line-height: 1.4;
+    max-width: 82.8rem;
+    margin: 0;
+
+    @include lg-up {
+      font-size: var(--body-font-l); // 20px
+    }
+  }
+
+  &__slider-wrap {
+    width: 100%;
+    position: relative;
+
+    // Embla overrides for desktop
+    @include lg-up {
+      .embla__viewport {
+        overflow: visible; // To see everything if desired, but we flex normally
+      }
+      .embla__dots {
+        display: none;
+      }
+    }
+  }
+
+  &__grid {
+    display: flex;
+    // Embla handles flex row natively
+
+    @include lg-up {
+      gap: 3.2rem;
+    }
+  }
+
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    padding-left: 1.6rem; // standard embla gap
+
+    @include md-up {
+      flex: 0 0 calc(50% - 1.2rem);
+    }
+
+    @include lg-up {
+      flex: 1 1 0;
+      padding-left: 0; // Removing spacing since lg-up uses `gap`
+    }
+  }
+
+  &__card {
+    background-color: var(--White);
+    border-radius: 3.2rem;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    height: 100%;
+  }
+
+  &__card-img-wrap {
+    width: 100%;
+    aspect-ratio: 360 / 220;
+    object-fit: cover;
+    border-radius: 2.6rem;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__card-content {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+
+  &__step-num {
+    background-color: var(--Blue-500);
+    color: var(--White);
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-text);
+    font-size: var(--body-font-m); // 18px
+    flex-shrink: 0;
+
+    @include lg-up {
+      font-size: var(--body-font-l); // 20px
+    }
+  }
+
+  &__step-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__step-title {
+    font-family: var(--font-titles);
+    font-size: var(--h4-font-size); // 20px
+    font-weight: 700;
+    color: var(--Blue-500);
+    line-height: 1.2;
+    margin: 0;
+    padding-top: 0.4rem; // Ensure alignment with the top of the number
+
+    @include lg-up {
+      font-size: var(--h3-font-size); // 28px
+      padding-top: 0;
+    }
+  }
+
+  &__step-desc {
+    font-family: var(--font-text);
+    font-size: var(--body-font-s); // 16px
+    color: var(--Black);
+    line-height: 1.4;
+    margin: 0;
+
+    @include lg-up {
+      font-size: var(--body-font-m); // 18px
+    }
+  }
+
+  // Embla Dots Overrides
+  .embla__dots {
+    margin-top: 2.4rem;
+    margin-bottom: 0;
+  }
+
+  .embla__dot {
+    width: 1.6rem;
+    height: 1.6rem;
+    border: none;
+    background-color: var(--Light-Grey); // #F5F5F5
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+
+    &--selected {
+      background-color: var(--Blue-300); // #4EA0FC
+      width: 1.6rem; 
+      height: 1.6rem;
+    }
+  }
+}
+

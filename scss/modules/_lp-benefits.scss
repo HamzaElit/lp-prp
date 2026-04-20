@@ -1,0 +1,77 @@
+.lp-benefits {
+  background-color: var(--Blue-500);
+  padding-block: 4rem;
+
+  @include md-up {
+    padding-block: 6rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+
+    @include md-up {
+      gap: 2.4rem;
+    }
+
+    @include lg-up {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3.2rem;
+    }
+  }
+
+  &__card {
+    background-color: var(--White);
+    border-radius: 2rem;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    overflow: hidden;
+
+    @include md-up {
+      border-radius: 2.4rem;
+      gap: 2rem;
+    }
+
+    @include lg-up {
+      border-radius: 2.8rem;
+    }
+  }
+
+  &__icon {
+    width: auto;
+    height: 6rem;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    @include md-up {
+      height: 6.4rem;
+    }
+
+    @include lg-up {
+      height: 8rem;
+    }
+  }
+
+  &__text {
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: var(--body-font-s); // 16px
+    color: var(--Black);
+    text-align: center;
+    line-height: 1.4;
+    margin: 0;
+
+    @include md-up {
+      font-size: var(--body-font-l); // 20px
+    }
+
+    @include lg-up {
+      font-size: 2.2rem; // 22px
+    }
+  }
+}

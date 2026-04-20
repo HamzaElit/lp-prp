@@ -1,0 +1,93 @@
+@import "../mixins/mixins-master";
+:root {
+  --screen-xs-min: 385px;
+  --screen-sm-min: 391px;
+  --screen-md-min: 768px;
+  --screen-lg-min: 1024px;
+  --screen-xl-min: 1288px;
+  --screen-xxl-min: 1700px;
+
+  --Blue-600: #013570;
+  --Blue-500: #024799;
+  --Blue-400: #015ec7;
+  --Blue-300: #4ea0fc;
+  --Blue-200: #b3d5fc;
+  --Blue-100: #dbecff;
+  --Black: #050505;
+  --Dark-Grey: #464646;
+  --Light-Grey: #f5f5f5;
+  --White: #ffffff;
+
+  --font-text: "Sofia Pro Soft", sans-serif;
+  --font-titles: "Sofia Pro Soft", sans-serif;
+
+  --font__size_base: 16px;
+  --font__line-height-body: 140%;
+  --font__line-height-heading: 120%;
+
+  --body-font-xxs: 1.2rem;
+  --body-font-xs: 1.4rem;
+  --body-font-s: 1.6rem;
+  --body-font-m: 1.8rem;
+  --body-font-l: 2rem;
+
+  --h1-font-size: 4.8rem;
+  --h2-font-size: 3.2rem;
+  --h3-font-size: 2.8rem;
+  --h4-font-size: 2rem;
+  --h5-font-size: 1.8rem;
+  --display-font-size: 5.8rem;
+
+  --btn-font-s: 1.6rem;
+  --btn-font-m: 1.8rem;
+  --btn-font-l: 2rem;
+
+  --lp-block-gap__sm: 5.5rem;
+  --lp-block-gap__md: 6rem;
+  --lp-block-gap__lg: 8rem;
+  --block-gap: var(--lp-block-gap__sm);
+  @include md-up {
+    --block-gap: var(--lp-block-gap__md);
+  }
+  @include lg-up {
+    --block-gap: var(--lp-block-gap__lg);
+  }
+
+  --radius-m: 1.6rem;
+  --radius-l: 2rem;
+  --radius-xl: 2.7rem;
+  --border-radius: var(--radius-m);
+  @include lg-up {
+    --border-radius: var(--radius-l);
+  }
+
+  --body-font: var(--body-font-m);
+  --body-font-sm: var(--body-font-s);
+  @include md-up {
+    --body-font: var(--body-font-l);
+    --body-font-sm: var(--body-font-m);
+  }
+
+  --lp-font-s: 1.4rem;
+  --lp-font-s-lg: 1.6rem;
+  --body-font-s: var(--lp-font-s);
+  @include lg-up {
+    --body-font-s: var(--lp-font-s-lg);
+  }
+
+  --lp-btn-font-sm: 1.8rem;
+  --lp-btn-font-lg: 1.8rem;
+  --btn-font: var(--lp-btn-font-sm);
+  @include lg-up {
+    --btn-font: var(--lp-btn-font-lg);
+  }
+
+  --h2_font-size-sm: 3rem;
+  --h2_font-size-md: 4.6rem;
+  --h2_font-size: var(--h2_font-size-sm);
+  @include md-up {
+    --h2_font-size: var(--h2_font-size-md);
+  }
+
+  --columns: 12;
+}

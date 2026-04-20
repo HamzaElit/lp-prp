@@ -1,0 +1,19 @@
+{
+  "name": "rh-2-7-2026-v7",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "watch": "vite build --watch",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass-embedded": "^1.99.0",
+    "vite": "^8.0.6"
+  }
+}

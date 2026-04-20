@@ -1,0 +1,136 @@
+.lp-hero {
+  padding-block: 2rem 4rem;
+  background-color: var(--White);
+
+  @include md-up {
+    padding-block: 4rem 6rem;
+  }
+
+  @include lg-up {
+    padding-block: 2.4rem 8rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+
+    @include lg-up {
+      gap: 3.2rem;
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: var(--h2-font-size); // 32px
+    line-height: 1.2;
+    color: var(--Black);
+    margin: 0;
+
+    .text-blue {
+      color: var(--Blue-400);
+    }
+
+    @include md-up {
+      font-size: var(--h1-font-size); // 48px
+    }
+
+    @include lg-up {
+      font-size: var(--display-font-size); // 58px
+    }
+  }
+
+  &__box {
+    background-color: var(--Blue-100);
+    border-radius: 2.6rem;
+    padding: 1.6rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    @include md-up {
+      padding: 2.4rem;
+      border-radius: 3rem;
+      flex-direction: row;
+      align-items: center;
+      gap: 2.4rem;
+    }
+
+    @include lg-up {
+      flex-direction: row;
+      align-items: center;
+      padding: 3.2rem;
+      border-radius: 3.2rem;
+      gap: 3.2rem;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      width: 100%;
+
+      @include lg-up {
+        width: 36.7rem; // Explicit width from Figma desktop
+        flex-shrink: 0;
+      }
+    }
+
+    &-title {
+      font-family: var(--font-titles);
+      font-weight: 700;
+      font-size: var(--h4-font-size); // 20px
+      line-height: 1.2;
+      color: var(--Blue-400);
+      margin: 0;
+
+      @include lg-up {
+        font-size: var(--h2-font-size); // 32px
+      }
+    }
+
+    &-desc {
+      font-family: var(--font-text);
+      font-weight: 400;
+      font-size: var(--body-font-s); // 16px
+      line-height: 1.4;
+      color: var(--Black);
+      margin: 0;
+
+      @include lg-up {
+        font-size: var(--body-font-l); // 20px
+      }
+    }
+
+    &-video {
+      width: 100%;
+      border-radius: 2rem;
+      overflow: hidden;
+      flex-shrink: 0;
+      aspect-ratio: 16 / 9; // Fallback size before video loads
+
+      @include md-up {
+        flex: 1;
+        border-radius: 2.4rem;
+      }
+
+      @include lg-up {
+        flex: 1;
+        max-width: 74.2rem; // Figma specific width
+        border-radius: 2.8rem;
+      }
+    }
+  }
+
+  // Set constraint for button on mobile and alignment
+  .btn--primary {
+    max-width: 35rem; // Mobile standard maximum width
+  }
+}

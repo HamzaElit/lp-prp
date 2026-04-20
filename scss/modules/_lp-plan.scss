@@ -1,0 +1,233 @@
+.lp-plan {
+  position: relative;
+  background-color: #e4e4e4;
+  padding-block: 4rem;
+  overflow: hidden;
+
+  @include md-up {
+    padding-block: 6rem;
+  }
+
+  @include lg-up {
+    padding-block: 10rem 8rem;
+  }
+
+  &__bg-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  &__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    mix-blend-mode: overlay;
+  }
+
+  &__bg-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 71, 153, 0.07);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+
+    @include lg-up {
+      gap: 4rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    text-align: center;
+
+    @include md-up {
+      gap: 1.2rem;
+    }
+  }
+
+  &__badge {
+    background-color: var(--Blue-200);
+    color: var(--Blue-600);
+    font-family: var(--font-text);
+    font-weight: 700;
+    font-size: var(--body-font-xs); // 14px
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 5rem;
+    line-height: 1.4;
+
+    @include lg-up {
+      font-size: var(--body-font-m); // 18px
+      padding: 0.8rem 1.6rem;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: var(--h3-font-size); // 28px
+    line-height: 1.2;
+    color: var(--Black);
+    margin: 0;
+
+    @include lg-up {
+      font-size: var(--h1-font-size); // 48px
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 40rem;
+
+    @include md-up {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 68rem;
+      gap: 2rem;
+    }
+
+    @include lg-up {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 105rem;
+      gap: 3.2rem;
+    }
+  }
+
+  &__item {
+    background-color: var(--White);
+    border-radius: 2.6rem;
+    padding: 0.8rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+
+    @include md-up {
+      padding: 1rem 1.8rem;
+      border-radius: 3rem;
+    }
+
+    @include lg-up {
+      padding: 1.4rem 2rem;
+      border-radius: 5rem;
+    }
+
+    &--special {
+      background-color: var(--Blue-100);
+      border: 1px solid var(--Blue-400);
+
+      .lp-plan__step,
+      .lp-plan__name {
+        color: var(--Blue-400);
+      }
+    }
+  }
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background-color: var(--icon-bg);
+    color: var(--icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-text);
+    font-size: var(--body-font-s); // 16px
+    flex-shrink: 0;
+    line-height: 1;
+
+    @include lg-up {
+      width: 3.2rem;
+      height: 3.2rem;
+      font-size: var(--body-font-l); // 20px
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__step {
+    font-family: var(--font-text);
+    font-size: var(--body-font-xxs); // 12px
+    color: var(--Blue-600);
+    line-height: 1.4;
+
+    @include lg-up {
+      font-size: var(--body-font-s); // 16px
+    }
+  }
+
+  &__name {
+    font-family: var(--font-text);
+    font-weight: 500;
+    font-size: var(--lp-font-s-lg); // 16px
+    color: var(--Blue-600);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: 0.2rem;
+
+    @include lg-up {
+      font-size: 1.9rem;
+    }
+  }
+
+  &__gratis-badge {
+    position: absolute;
+    top: -5px;
+    right: -7px;
+    background-color: var(--Blue-400);
+    color: var(--White);
+    border-radius: 5rem;
+    padding: 0.5rem 1rem 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-text);
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1;
+    text-transform: uppercase;
+
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+    @include md-up {
+      top: 6px;
+      right: -23px;
+    }
+    @include lg-up {
+      border-radius: 1.6rem;
+      padding: 0.4rem 0.8rem;
+      font-size: var(--body-font-s); // 16px
+      line-height: 1.2;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+}

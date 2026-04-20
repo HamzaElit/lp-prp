@@ -1,0 +1,257 @@
+.lp-tech-details {
+  background-color: var(--White);
+  padding-block: 4rem;
+  overflow: hidden;
+
+  @include md-up {
+    padding-block: 6rem;
+  }
+
+  @include lg-up {
+    padding-block: 8rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+
+    @include md-up {
+      gap: 4.8rem;
+    }
+
+    @include lg-up {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: 3.2rem;
+    }
+  }
+
+  &__text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 50rem;
+
+    @include md-up {
+      align-items: center;
+      text-align: center;
+      gap: 1.6rem;
+    }
+
+    @include lg-up {
+      flex: 1 1 45%;
+      max-width: 49.7rem;
+      align-items: flex-start;
+      text-align: left;
+      gap: 2rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+
+    @include md-up {
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    @include lg-up {
+      align-items: flex-start;
+    }
+  }
+
+  &__badge {
+    background-color: var(--Blue-200);
+    color: var(--Blue-600);
+    font-family: var(--font-text);
+    font-weight: 700;
+    font-size: var(--body-font-xs); // 14px
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 5rem;
+    line-height: 1.4;
+
+    @include md-up {
+      font-size: var(--body-font-s); // 16px
+      padding: 0.8rem 1.6rem;
+    }
+
+    @include lg-up {
+      font-size: var(--body-font-m); // 18px
+    }
+  }
+
+  &__title {
+    font-family: var(--font-titles);
+    font-weight: 700;
+    font-size: var(--h3-font-size); // 28px
+    line-height: 1.2;
+    color: var(--Black);
+    margin: 0;
+
+    @include md-up {
+      font-size: var(--h2-font-size); // 32px
+      max-width: 35rem;
+    }
+
+    @include lg-up {
+      font-size: var(--h1-font-size); // 48px
+      max-width: none;
+    }
+  }
+
+  &__desc {
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: var(--body-font-s); // 16px
+    line-height: 1.4;
+    color: var(--Dark-Grey);
+    margin: 0;
+
+    @include md-up {
+      font-size: var(--body-font-m); // 18px
+      max-width: 50rem;
+    }
+
+    @include lg-up {
+      font-size: var(--body-font-l); // 20px
+    }
+  }
+
+  &__visuals {
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+    display: flex;
+    justify-content: center;
+
+    @include md-up {
+      max-width: 50rem;
+    }
+
+    @include lg-up {
+      flex: 1 1 50%;
+      max-width: 60.4rem;
+      justify-content: flex-start;
+    }
+  }
+
+  &__img-wrap {
+    width: 80%;
+    aspect-ratio: 452 / 676;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+
+    @include md-up {
+      border-radius: 3.2rem;
+    }
+
+    @include lg-up {
+      width: 44ؤقثش.2rem;
+      height: 67.6rem;
+      aspect-ratio: auto;
+      border-radius: 4.4rem;
+      margin-left: 9rem;
+      margin-right: auto;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__card {
+    position: absolute;
+    background-color: var(--Blue-400); // #015ec7
+    color: var(--White);
+    font-family: var(--font-text);
+    padding: 1.2rem 1.4rem;
+    border-radius: 1.6rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    box-shadow: 0 3px 6px rgba(1, 35, 71, 0.18);
+    max-width: 20rem;
+    z-index: 2;
+
+    strong {
+      font-weight: 700;
+      display: inline;
+    }
+
+    @include md-up {
+      padding: 1.6rem 2rem;
+      border-radius: 2rem;
+      font-size: 2rem;
+      max-width: 24rem;
+    }
+
+    @include lg-up {
+      padding: 2rem;
+      border-radius: 2.6rem;
+      font-size: 2.6rem;
+      max-width: none;
+    }
+
+    &--1 {
+      top: 10%;
+      left: 0;
+      width: 142px;
+
+      @include md-up {
+        width: 40%;
+      }
+
+      @include lg-up {
+        top: 8.7rem;
+        left: 0;
+        width: 24.2rem;
+      }
+    }
+
+    &--2 {
+      top: 45%;
+      left: 0;
+      width: 135px;
+
+      @include md-up {
+        left: 0%;
+        width: 40%;
+      }
+
+      @include lg-up {
+        top: 38.4rem;
+        left: 1rem;
+        width: 22.6rem;
+      }
+    }
+
+    &--3 {
+      bottom: 10%;
+      right: 0;
+      width: 118px;
+
+      @include md-up {
+        bottom: 15%;
+        width: 40%;
+      }
+
+      @include lg-up {
+        bottom: auto;
+        top: 42.8rem;
+        right: 0;
+        left: auto;
+        width: 20rem;
+      }
+    }
+  }
+}
