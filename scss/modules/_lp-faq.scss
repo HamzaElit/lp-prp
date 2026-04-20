@@ -1,39 +1,38 @@
 .lp-faq {
-  padding: 6rem 0 5rem;
+  background-color: var(--Light-Grey);
+  padding: 4rem 0;
+
+  @include md-up {
+    padding: 6rem 0;
+  }
 
   @include lg-up {
-    padding: 8rem 0 5rem;
+    padding: 8rem 0;
   }
 
   &__wrap {
-    max-width: 740px;
+    max-width: 81.6rem;
     margin: 0 auto;
   }
 
   &__title {
     font-family: var(--font-titles);
-    font-weight: 900;
-    font-size: 3rem;
+    font-weight: 700;
+    font-size: var(--h3-font-size);
     line-height: 1.2;
     color: var(--Black);
-    margin: 0 0 3rem 0;
+    margin: 0 0 1.6rem 0;
+    text-align: left;
+
+    @include md-up {
+      font-size: var(--h2-font-size);
+      text-align: center;
+      margin-bottom: 2.4rem;
+    }
 
     @include lg-up {
-      font-size: 4rem;
-      margin-bottom: 4rem;
-    }
-  }
-
-  &__group {
-    margin-bottom: 3rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    > .lp-badge {
-      margin-bottom: 2rem;
-      display: inline-block;
+      font-size: var(--h1-font-size);
+      margin-bottom: 3.6rem;
     }
   }
 
@@ -41,40 +40,47 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+
+    @include md-up {
+      gap: 1.6rem;
+    }
   }
 
-  // ─── Accordion override for this section ───
   details.accordion__item {
-    border: none;
+    background-color: var(--White);
+    border: 2px solid var(--Blue-300);
+    border-radius: 50px;
     transition: all 0.3s ease;
-    background-color: transparent; // Parent has no bg
+    overflow: hidden;
 
     summary.accordion__quesion {
-      min-height: 90px;
-      padding: 1rem 2.4rem;
-      padding-left: 3.8rem;
+      min-height: auto;
+      padding: 1.2rem 2rem;
       cursor: pointer;
       list-style: none;
-      position: relative;
-      z-index: 2; // Always above the answer box
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1.2rem;
+      background-color: transparent;
+      border-radius: 0;
+      color: var(--Black);
 
-      background-color: var(--Primary);
-      border-radius: 500px; // Perfect pill shape always
+      @include md-up {
+        padding: 1.2rem 2.4rem;
+      }
 
-      font-family: var(--font-text);
-      font-weight: 700;
-      font-size: 1.9rem;
-      line-height: 1.4;
-      color: var(--White);
+      > span:first-child {
+        flex: 1;
+        font-family: var(--font-text);
+        font-weight: 700;
+        font-size: var(--h5-font-size);
+        line-height: 1.2;
+        color: var(--Black);
 
-      @include lg-up {
-        min-height: 100px;
-        font-size: 2.2rem;
-        padding: 1.5rem 3.6rem;
+        @include lg-up {
+          font-size: var(--h4-font-size);
+        }
       }
 
       &::-webkit-details-marker {
@@ -89,119 +95,77 @@
       &:focus {
         outline: none;
       }
-
-      // Hide the old .user-profile icon if any
-      .icon {
-        display: none;
-      }
     }
 
     .accordion__answer {
-      background-color: #e1e1e6;
-      padding: 6rem 2.4rem 2.4rem; // Extra top padding because it's slipped behind the pill
-      margin-top: -4rem; // Slip it behind the blue pill
-      border-radius: 0 0 16px 16px; // Rounded bottom
-      position: relative;
-      z-index: 1;
+      padding: 0 2rem 1.6rem;
+      background-color: transparent;
+      margin-top: 0;
+      border-radius: 0;
 
-      @include lg-up {
-        padding: 6.3rem 3.6rem 3rem;
-        margin-top: -4rem;
+      @include md-up {
+        padding: 0 2.4rem 2rem;
       }
 
       p {
         font-family: var(--font-text);
         font-weight: 400;
-        font-size: 1.9rem;
-        line-height: 1.5;
+        font-size: var(--body-font-s);
+        line-height: 1.4;
         color: var(--Black);
         margin: 0;
 
         @include lg-up {
-          font-size: 2.2rem;
+          font-size: var(--body-font-m);
         }
       }
     }
 
-    // When open: no border-radius changes needed, the pill stays a pill!
     &[open] {
-      // Just to override the previous rules if any remained
-      border-radius: 0;
-      overflow: visible;
+      border-radius: 2.4rem;
+
       .accordion__quesion {
         border-bottom-right-radius: 0;
       }
     }
   }
 
-  // ─── +/- Icon ───
   &__icon {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    border-radius: 50%;
-    background-color: #b3d5fc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    min-width: 2.4rem;
     position: relative;
     transition: transform 0.3s ease;
 
-    // Plus icon using pseudo elements
     &::before,
     &::after {
       content: "";
       position: absolute;
-      background-color: var(--Primary);
-      border-radius: 2px;
+      top: 50%;
+      left: 50%;
+      background-color: var(--Black);
+      border-radius: 1px;
       transition: transform 0.3s ease;
     }
 
-    // Horizontal bar
     &::before {
-      width: 14px;
-      height: 3px;
+      width: 1.6rem;
+      height: 2px;
+      transform: translate(-50%, -50%);
     }
 
-    // Vertical bar (rotates to form +)
     &::after {
-      width: 3px;
-      height: 14px;
+      width: 2px;
+      height: 1.6rem;
+      transform: translate(-50%, -50%);
     }
   }
 
-  // When open: rotate icon to minus
   details.accordion__item[open] {
     summary .lp-faq__icon {
       &::after {
-        transform: rotate(90deg);
+        transform: translate(-50%, -50%) rotate(90deg);
       }
-    }
-  }
-
-  // ─── CTA inside answer ───
-
-  &__btn {
-    display: inline-block;
-    font-family: var(--font-text);
-    font-size: 1.5rem;
-    color: var(--White) !important;
-    background-color: var(--Primary);
-    border: 2px solid var(--Primary);
-    padding: 1rem 2.4rem;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-
-    @include hover {
-      background-color: transparent;
-      color: var(--Primary) !important;
-    }
-
-    @include lg-up {
-      font-size: 1.6rem;
-      padding: 1.2rem 3rem;
     }
   }
 }

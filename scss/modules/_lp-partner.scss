@@ -57,7 +57,7 @@
   &__track {
     display: flex;
     align-items: center;
-    animation: continuous-scroll 20s linear infinite;
+    animation: continuous-scroll 16s linear infinite;
     width: max-content;
 
     @include md-up {

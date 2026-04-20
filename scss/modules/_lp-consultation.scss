@@ -237,6 +237,7 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    width: 100%;
 
     @include md-up {
       gap: 2.4rem;
@@ -245,9 +246,8 @@
 
   &__features {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
+    gap: 0.5rem;
 
     @include sm {
       align-items: flex-start;
@@ -257,18 +257,18 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.6rem;
+      gap: 0.5rem;
     }
 
     @include lg-up {
-      gap: 2.4rem;
+      gap: 0.5rem;
     }
   }
 
   &__feature {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.1rem;
 
     svg {
       width: 1.4rem;
@@ -284,12 +284,12 @@
     span {
       font-family: var(--font-text);
       font-weight: 400;
-      font-size: var(--body-font-xs); // 14px
+      font-size: 1.1rem; // 14px
       color: var(--Dark-Grey);
       line-height: 1.4;
 
       @include lg-up {
-        font-size: var(--body-font-s); // 16px
+        font-size: 1.4rem; // 16px
       }
     }
   }

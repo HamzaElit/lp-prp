@@ -106,10 +106,10 @@ section {
   cursor: pointer;
   overflow: hidden;
   padding: 0;
+  width: 100%;
   @include transition(all 0.3s ease);
 
-  @include md-up {
-    width: 35rem;
+  @include md-up {  
     height: 5.2rem;
     font-size: var(--btn-font-m);
   }
@@ -122,10 +122,9 @@ section {
   &--primary {
     border-color: var(--Blue-400);
     padding-right: 5rem;
-    padding-left: 2rem;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: -2px;
       bottom: -2px;
@@ -138,14 +137,15 @@ section {
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       right: 1.5rem;
       top: 50%;
       transform: translateY(-50%);
       width: 2rem;
       height: 2rem;
-      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 5.5L20 12L13.5 18.5" stroke="%23015ec7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 12H20" stroke="%23015ec7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 5.5L20 12L13.5 18.5" stroke="%23015ec7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 12H20" stroke="%23015ec7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+        no-repeat center;
       background-size: contain;
       z-index: 1;
       @include transition(all 0.3s ease);
@@ -153,9 +153,14 @@ section {
 
     @include md-up {
       padding-right: 6rem;
-      padding-left: 2.4rem;
-      &::before { width: calc(100% - 6rem); }
-      &::after { right: 1.8rem; width: 2.4rem; height: 2.4rem; }
+      &::before {
+        width: calc(100% - 6rem);
+      }
+      &::after {
+        right: 1.8rem;
+        width: 2.4rem;
+        height: 2.4rem;
+      }
     }
 
     @include hover {
@@ -165,11 +170,11 @@ section {
       @include md-up {
         padding-right: 2.4rem;
       }
-      
+
       &::before {
         width: calc(100% + 4px);
       }
-      
+
       &::after {
         opacity: 0;
         transform: translateY(-50%) translateX(10px);
@@ -207,7 +212,7 @@ section {
     height: 4rem;
     font-size: var(--btn-font-s);
     padding: 0 2rem;
-    
+
     @include md-up {
       width: auto;
       min-width: 16rem;
