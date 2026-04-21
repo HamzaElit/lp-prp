@@ -59,7 +59,7 @@
     font-size: var(--body-font-s); // 16px
     color: var(--Light-Grey);
     line-height: 1.4;
-    max-width: 82.8rem;
+    max-width: 85.8rem;
     margin: 0;
 
     @include lg-up {
@@ -205,9 +205,8 @@
 
     &--selected {
       background-color: var(--Blue-300); // #4EA0FC
-      width: 1.6rem; 
+      width: 1.6rem;
       height: 1.6rem;
     }
   }
 }
-
