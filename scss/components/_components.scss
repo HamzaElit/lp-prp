@@ -28,7 +28,7 @@ section {
 }
 
 .container {
-  width: min(calc(100% - 6rem), 110rem);
+  width: min(calc(100% - 4rem), 110rem);
   margin: auto;
 }
 
@@ -365,7 +365,7 @@ details {
   }
 
   @include hover {
-    background-color: darken(#004b9a, 8%);
+    background-color: #003771;
     box-shadow: 0 4px 12px rgba(0, 75, 154, 0.3);
   }
 

@@ -1,0 +1,123 @@
+.lp-cta-banner {
+  background-color: var(--Blue-200);
+  padding-block: 2.4rem;
+  @include md-up {
+    padding-block: var(--block-gap);
+  }
+
+  &__card {
+    background-color: var(--White);
+    border-radius: var(--radius-xl);
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+
+    @include md-up {
+      padding: 3.2rem 4rem;
+      gap: 2.4rem;
+    }
+
+    @include lg-up {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 5.6rem;
+      gap: 4rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 100%;
+
+    @include lg-up {
+      align-items: flex-start;
+      gap: 2.4rem;
+      width: auto;
+      flex: 1;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-titles);
+    font-size: var(--h3-font-size);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--Blue-600);
+
+    @include lg-up {
+      text-align: left;
+      font-size: var(--h2-font-size);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+
+    @include md-up {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem 4rem;
+    }
+
+    @include lg-up {
+      justify-content: flex-start;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: var(--font-text);
+    font-size: var(--body-font-s);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--Black);
+
+    @include md-up {
+      font-size: 1.6rem;
+    }
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M17.9537 4.25898C18.1881 4.49339 18.3197 4.81127 18.3197 5.14273C18.3197 5.47418 18.1881 5.79207 17.9537 6.02648L8.58455 15.3956C8.46074 15.5195 8.31374 15.6177 8.15195 15.6848C7.99016 15.7518 7.81676 15.7863 7.64164 15.7863C7.46652 15.7863 7.29311 15.7518 7.13132 15.6848C6.96953 15.6177 6.82254 15.5195 6.69872 15.3956L2.04372 10.7415C1.92433 10.6262 1.8291 10.4882 1.76359 10.3357C1.69808 10.1832 1.6636 10.0192 1.66216 9.85323C1.66071 9.68725 1.69234 9.52266 1.75519 9.36903C1.81804 9.21541 1.91086 9.07585 2.02823 8.95848C2.14559 8.84112 2.28516 8.7483 2.43878 8.68545C2.5924 8.6226 2.757 8.59097 2.92297 8.59241C3.08895 8.59386 3.25297 8.62834 3.40548 8.69385C3.55798 8.75936 3.69591 8.85459 3.81122 8.97398L7.64122 12.804L16.1854 4.25898C16.3015 4.14282 16.4393 4.05067 16.591 3.98781C16.7427 3.92494 16.9053 3.89258 17.0696 3.89258C17.2338 3.89258 17.3964 3.92494 17.5481 3.98781C17.6998 4.05067 17.8376 4.14282 17.9537 4.25898Z' fill='%23050505'/%3E%3C/svg%3E%0A");      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__action {
+    flex-shrink: 0;
+    width: 100%;
+
+    @include md-up {
+      width: auto;
+    }
+
+    @include lg-up {
+      min-width: 37rem;
+    }
+
+    .btn-item {
+      width: 100%;
+
+      @include md-up {
+        min-width: 35rem;
+      }
+    }
+  }
+}
