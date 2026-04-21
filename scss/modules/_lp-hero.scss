@@ -101,6 +101,9 @@
       line-height: 1.4;
       color: var(--Black);
       margin: 0;
+      strong {
+        font-weight: 700;
+      }
 
       @include lg-up {
         font-size: var(--body-font-l); // 20px
